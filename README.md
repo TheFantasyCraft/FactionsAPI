@@ -48,6 +48,7 @@ switch (rank) {
 To get info from a faction
 
 ```java
+Faction faction = factions.getOwningFaction(territory);
 String name = faction.getName();
 String description = faction.getDescription();
 boolean safezone = faction.isSafezone();
@@ -59,8 +60,8 @@ boolean allyWithWarzone = faction.isAlly(Faction.WARZONE);
 boolean allyWithSafezone = faction.isAlly(Faction.SAFEZONE);
 FPlayer player = faction.getOwner();
 FPlayer[] moderators = faction.getModerators();
-FPlayer[] members = faction.getMembers(); //Just the members
-FPlayer[] allMembers = faction.getAllMembers();
+FPlayer[] members = faction.getMembers(); //Just people with the rank member
+FPlayer[] allMembers = faction.getAllMembers(); //Everyone belonging to the faction
 
 //Rule The world with all this version independent information
 
