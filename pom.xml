@@ -19,6 +19,10 @@
       <id>bukkit-repo</id>
       <url>http://repo.bukkit.org/content/groups/public/</url>
     </repository>
+    <repository>
+      <id>techcable-repo</id>
+      <url>https://github.com/Techcable/Maven-Repo/raw/master/</url>
+    </repository>
   </repositories>
 
   <dependencies>
