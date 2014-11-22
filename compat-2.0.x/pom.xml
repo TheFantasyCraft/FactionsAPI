@@ -9,6 +9,7 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   
+  <packaging>jar</packaging>
   <artifactId>factionsapi-compat-2.0.x</artifactId>
 
   <dependencies>

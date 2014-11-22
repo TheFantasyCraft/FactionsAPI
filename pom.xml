@@ -7,7 +7,7 @@
   <groupId>techcable.minecraft</groupId>
   <artifactId>factionsapi-parent</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-
+  <packaging>pom</packaging>
   <modules>
     <module>api</module>
     <module>compat-2.0.x</module>
@@ -26,6 +26,12 @@
   </repositories>
 
   <dependencies>
+  	<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>lombok</artifactId>
+  		<version>1.14.8</version>
+  		<scope>provided</scope>
+  	</dependency>
     <dependency>
       <groupId>org.bukkit</groupId>
       <artifactId>bukkit</artifactId>
