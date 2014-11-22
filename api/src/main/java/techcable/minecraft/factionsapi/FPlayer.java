@@ -1,15 +1,16 @@
-Bpackage techcable.minecraft.factionsapi;
+package techcable.minecraft.factionsapi;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import lombok.*;
 
 @Getter
 public abstract class FPlayer {
-    private Player player;
+    private OfflinePlayer player;
     
 
-    public FPlayer(Player player) {
+    public FPlayer(OfflinePlayer player) {
 	this.player = player;
     }
 

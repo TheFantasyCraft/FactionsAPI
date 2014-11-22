@@ -1,11 +1,25 @@
-BBpackage techcable.minecraft.factionsapi;
+package techcable.minecraft.factionsapi;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Getter;
+
 public abstract class Faction {
-    public static final Faction WARZONE;
-    public static final Faction SAFEZONE;
+    public static Faction WARZONE;
+    public static Faction SAFEZONE;
+    
+    @Getter
+    private final Factions factions;
+    public Faction(Factions factions) {
+    	if (WARZONE == null) {
+    		Faction.WARZONE = factions.getWarzone();
+    	}
+    	if (SAFEZONE == null) {
+    		Faction.SAFEZONE = factions.getSafezone();
+    	}
+    	this.factions = factions;
+    }
     public abstract String getId();
     public abstract String getName();
     public abstract String getDescription();
@@ -14,20 +28,16 @@ public abstract class Faction {
     public abstract boolean isNone();
     public abstract Faction[] getAllies();
     public abstract Faction[] getEnemies();
-    public boolean isAlly(Faction other) {
-	return isContainValue(getAllies(), value);
-    }
+    public abstract boolean isAlly(Faction other);
+    public abstract boolean isEnemy(Faction other);
     public boolean isAlly(FPlayer player) {
-	return isAlly(player.getFaction());
+    	return isAlly(player.getFaction());
     }
-    public boolean isEnemy(Faction other) {
-	return isContainValue(getEnemies(), value);
-    }
-    public boolean isEnemy(Faction player) {
-	return isEnemy(player.getFaction());
+    public boolean isEnemy(FPlayer player) {
+    	return isEnemy(player.getFaction());
     }
     public boolean isMember(FPlayer player) {
-	return player.getFaction().equals(this);
+    	return player.getFaction().equals(this);
     }
     
     public abstract FPlayer getOwner();

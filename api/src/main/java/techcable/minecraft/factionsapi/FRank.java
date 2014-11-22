@@ -1,4 +1,4 @@
-Bpackage techcable.minecraft.factionsapi;
+package techcable.minecraft.factionsapi;
 
 public enum FRank {
     OWNER {
