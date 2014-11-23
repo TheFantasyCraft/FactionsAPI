@@ -12,6 +12,7 @@
     <module>api</module>
     <module>compat-2.0.x</module>
     <module>compat-1.6.x</module>
+    <module>factionsapi-base</module>
   </modules>
   
   <repositories>
