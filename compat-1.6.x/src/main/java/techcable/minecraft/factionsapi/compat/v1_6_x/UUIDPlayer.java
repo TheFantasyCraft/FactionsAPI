@@ -19,20 +19,28 @@ public class UUIDPlayer extends techcable.minecraft.factionsapi.FPlayer {
 
 	@Override
 	public UUIDFaction getFaction() {
+		if (!hasFaction()) return getFactions().getNone();
 		return getFactions().getUUIDFaction(getBacking().getFaction());
 	}
 
 	@Override
 	public FRank getRank() {
+		if (!hasFaction()) return null;
 		switch (getBacking().getRole()) {
 		case ADMIN : return FRank.OWNER;
 		case MODERATOR : return FRank.MODERATOR;
 		case NORMAL : return FRank.MEMBER;
-		default : return FRank.MEMBER; //Worst case scenerio get less permissions then should have
+		default : return FRank.MEMBER; //Worst case scenario get less permissions then should have
 		}
 	}
 	
 	public FPlayer getBacking() {
 		return FPlayers.getInstance().getByOfflinePlayer(getPlayer());
+	}
+
+	@Override
+	public boolean hasFaction() {
+		if (getBacking() == null) return false;
+		else return getBacking().hasFaction();
 	}
 }

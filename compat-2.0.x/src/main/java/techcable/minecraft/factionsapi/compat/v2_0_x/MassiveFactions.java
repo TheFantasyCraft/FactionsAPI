@@ -71,4 +71,9 @@ public class MassiveFactions extends Factions {
 	public MassiveFaction getSafezone() {
 		return getMassiveFaction(FactionColl.get().getSafezone());
 	}
+
+	@Override
+	public MassiveFaction getNone() {
+		return getMassiveFaction(FactionColl.get().getNone());
+	}
 }

@@ -8,7 +8,8 @@ import lombok.Getter;
 public abstract class Faction {
 	public static Faction WARZONE;
 	public static Faction SAFEZONE;
-
+	public static Faction NONE;
+	
 	@Getter
 	private final Factions factions;
 
@@ -18,6 +19,9 @@ public abstract class Faction {
 		}
 		if (SAFEZONE == null) {
 			Faction.SAFEZONE = factions.getSafezone();
+		}
+		if (NONE == null) {
+			Faction.NONE = factions.getNone();
 		}
 		this.factions = factions;
 	}
@@ -36,7 +40,9 @@ public abstract class Faction {
 		return this.equals(WARZONE);
 	}
 
-	public abstract boolean isNone();
+	public boolean isNone() {
+		return this.equals(NONE);
+	}
 
 	public Faction[] getAllies() {
 		List<Faction> allies = new ArrayList<>();

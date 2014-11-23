@@ -23,11 +23,13 @@ public class MassiveFPlayer extends FPlayer {
 	private final MassiveFactions factions;
 	@Override
 	public MassiveFaction getFaction() {
+		if (!hasFaction()) return getFactions().getNone();
 		return toMassiveFaction(getMPlayer().getFaction());
 	}
 
 	@Override
 	public FRank getRank() {
+		if (!hasFaction()) return null;
 		Rel rel = getMPlayer().getRole();
 		switch (rel) {
 			case LEADER : return FRank.OWNER;
@@ -44,5 +46,11 @@ public class MassiveFPlayer extends FPlayer {
 	
 	public MassiveFaction toMassiveFaction(Faction raw) {
 		return getFactions().getMassiveFaction(raw);
+	}
+
+	@Override
+	public boolean hasFaction() {
+		if (getMPlayer() == null) return false;
+		return getMPlayer().hasFaction();
 	}
 }

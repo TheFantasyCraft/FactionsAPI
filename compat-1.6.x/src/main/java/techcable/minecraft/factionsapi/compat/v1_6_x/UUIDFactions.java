@@ -65,5 +65,10 @@ public class UUIDFactions extends techcable.minecraft.factionsapi.Factions {
 	public UUIDFaction getSafezone() {
 		return getUUIDFaction(Factions.getInstance().getSafeZone());
 	}
+	
+	@Override
+	public UUIDFaction getNone() {
+		return getUUIDFaction(Factions.getInstance().getNone());
+	}
 
 }

@@ -15,4 +15,5 @@ public abstract class Factions {
     
     public abstract Faction getWarzone();
     public abstract Faction getSafezone();
+    public abstract Faction getNone();
 }
