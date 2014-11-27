@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import lombok.*;
 
 public abstract class Factions {
-    
+	
     public abstract FPlayer getFPlayer(OfflinePlayer player); 
     public abstract Faction getOwningFaction(Location location);
     

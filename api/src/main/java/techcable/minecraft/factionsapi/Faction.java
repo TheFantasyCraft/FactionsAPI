@@ -6,23 +6,11 @@ import java.util.List;
 import lombok.Getter;
 
 public abstract class Faction {
-	public static Faction WARZONE;
-	public static Faction SAFEZONE;
-	public static Faction NONE;
 	
 	@Getter
 	private final Factions factions;
 
 	public Faction(Factions factions) {
-		if (WARZONE == null) {
-			Faction.WARZONE = factions.getWarzone();
-		}
-		if (SAFEZONE == null) {
-			Faction.SAFEZONE = factions.getSafezone();
-		}
-		if (NONE == null) {
-			Faction.NONE = factions.getNone();
-		}
 		this.factions = factions;
 	}
 
@@ -33,15 +21,15 @@ public abstract class Faction {
 	public abstract String getDescription();
 
 	public boolean isSafezone() {
-		return this.equals(SAFEZONE);
+		return this.equals(getFactions().getSafezone());
 	}
 
 	public boolean isWarzone() {
-		return this.equals(WARZONE);
+		return this.equals(getFactions().getWarzone());
 	}
 
 	public boolean isNone() {
-		return this.equals(NONE);
+		return this.equals(getFactions().getNone());
 	}
 
 	public Faction[] getAllies() {
