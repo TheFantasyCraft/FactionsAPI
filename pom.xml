@@ -22,7 +22,7 @@
     </repository>
     <repository>
       <id>techcable-repo</id>
-      <url>https://github.com/Techcable/Maven-Repo/raw/master/</url>
+      <url>http://repo.techcable.net/content/groups/public/</url>
     </repository>
   </repositories>
 
