@@ -15,6 +15,19 @@
     <module>factionsapi-base</module>
   </modules>
   
+  <distributionManagement>
+  	<repository>
+  		<id>techcable-repo</id>
+  		<name>Releases</name>
+  		<url>http://repo.techcable.net/content/repositories/releases/</url>
+  	</repository>
+  	<snapshotRepository>
+  		<id>techcable-repo</id>
+  		<name>Snapshots</name>
+  		<url>http://repo.techcable.net/content/repositories/snapshots/</url>
+  	</snapshotRepository>
+  </distributionManagement>
+  
   <repositories>
     <repository>
       <id>bukkit-repo</id>
