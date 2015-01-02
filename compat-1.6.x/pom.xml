@@ -21,7 +21,8 @@
     <dependency>
       <groupId>com.massivecraft</groupId>
       <artifactId>Factions</artifactId>
-      <version>1.6.9.5-U0.1.12-SNAPSHOT</version>
+      
+<version>1.6.9.5-U0.1.13-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
